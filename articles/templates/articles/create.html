@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron text-center">
+<form action="{% url 'articles:create' %}" method="POST">{% csrf_token %}
+  <div >title: {{form.title}}</div>
+  <div class="col-sm-12">content:{{form.content}}</div>
+  <hr class="my-4">
+  <div class="d-flex justify-content-around">
+  <button class="btn btn-primary btn-lg">Create</button>
+  </form>
+  <button class="btn btn-secondary btn-lg" href="{% url 'articles:index' %}">Back</button>
+  </div>
+</div>
+
+
+{% endblock content %}

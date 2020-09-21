@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card-deck my-3">
+{% for article in articles %}
+    <div class="col-sm-6 my-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{article.title}}</h5>
+          <p class="card-text">{{article.content}}</p>
+          <a href="{% url 'articles:detail' article.pk %}" class="btn btn-primary">More Detail</a>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock content %}
